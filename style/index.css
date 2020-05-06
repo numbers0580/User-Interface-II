@@ -54,37 +54,58 @@ table {
 }
 
 /*Project-specific Styling starts here*/
-@import url('https://fonts.googleapis.com/css?family=Cabin|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
 body {
     font-family: 'Cabin', sans-serif;
-    width: 800px;
-    background-color: #00C0C0;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
+.viewablePage {
+    width: 800px;
+    background-image: linear-gradient(to top right, #404040, #E8E8E8);
+}
+
 header {
     width: 100%;
-    background-color: #C0C0C0;
+    padding: 5%;
+    background-image: url('https://lh3.googleusercontent.com/proxy/Owk8a_7mCByMKe1s-28cLuWJzuqK0_7mhxpXCe_4Uh6DYH9HlQDLwTeFCb27q54M_LN1H0SqmPTJcjoCgVaK_GM5oO9N2FzzORLulZczSK4rGpxS7c1tVkM0');
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
 }
 
 h1 {
     font-size: 36px;
     font-weight: bold;
+    color: #FFD700;
     padding: 0.5%;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     padding: 0.5%;
 }
 
-.tabs {
-    padding: 10px;
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #C0C0C0;
+    padding: 0.5%;
 }
 
-.tabs button {
+.tablinks {
     width: 100px;
     height: 30px;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
 }
 
 .nameSection {
@@ -92,7 +113,6 @@ h2 {
     justify-content: space-evenly;
     align-items: center;
     padding: 20px 0;
-    background-color: red;
 }
 
 .nameSection div {
@@ -103,7 +123,6 @@ h2 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    background-color: palegoldenrod;
 }
 
 .wrapSection div {
@@ -114,4 +133,11 @@ h2 {
 .wrapSection img {
     width: 170px;
     height: 170px;
+}
+
+footer {
+    text-align: center;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190826/pngtree-abstract-metallic-blue-black-frame-layout-modern-tech-design-template-image_305020.jpg');
+    background-size: cover;
+    padding: 5%;
 }
