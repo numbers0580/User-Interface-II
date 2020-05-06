@@ -56,21 +56,61 @@ table {
 /*Project-specific Styling starts here*/
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
+@keyframes Animator-former {
+    from {background-color: rgb(185, 122, 5);}
+    to {background-color: gold}
+}
+
+@keyframes Animator-hold {
+    0% {background-color: #BB0000;}
+    33% {background-color: #00BB00;}
+    67% {background-color: #0000BB;}
+    100% {background-color: #BB0000;}
+}
+
+@keyframes Animator {
+    0% {background-color: #BB0000;}
+    33% {background-color: #FF8000;}
+    67% {background-color: #BBBB00;}
+    100% {background-color: #BB0000;}
+}
+
 body {
     font-family: 'Cabin', sans-serif;
     background-color: black;
     width: 100%;
+    /*
+        Flex Container
+        the "display: flex;" below specifies that the
+        <body> itself will be a flex container. The
+        flex items are only the direct childs of this
+        container. Here, I only made one child, a div
+        with the class "viewablePage"
+    */
     display: flex;
+    /*
+        Flex Container Properties
+        Flex containers come with some default properties,
+        but I wanted to change the way the body positioned
+        the <div> it contained using "justify-content: center;"
+    */
     justify-content: center;
 }
 
 .viewablePage {
-    width: 800px;
+    width: 1000px;
     background-image: linear-gradient(to top right, #404040, #E8E8E8);
 }
 
 header {
     width: 100%;
+    /*
+        Box Model: Padding
+        The padding creates a buffer area inside the container
+        (in this case, the <header>)
+        This prevents elements within that container from touching
+        specified edges (top, right, bottom, left -- in that order)
+    */
     padding: 5%;
     background-image: url('https://lh3.googleusercontent.com/proxy/Owk8a_7mCByMKe1s-28cLuWJzuqK0_7mhxpXCe_4Uh6DYH9HlQDLwTeFCb27q54M_LN1H0SqmPTJcjoCgVaK_GM5oO9N2FzzORLulZczSK4rGpxS7c1tVkM0');
     background-size: cover;
@@ -108,18 +148,40 @@ h3 {
     font-size: 16px;
 }
 
+.tablinks:hover {
+    animation-name: Animator;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 .nameSection {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .nameSection div {
     text-align: center;
+    width: 45%;
+}
+
+.nameSection img {
+    /*
+        Box Model: Border
+        The border of a container is the area between any margins
+        outside of the container and the padding inside the
+        container. In this case, the container is the image in
+        the first section, just below the header.
+    */
+    border: 4px solid gold;
 }
 
 .wrapSection {
+    /*
+        Another Flex Container along with some customized
+        properties
+    */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -127,12 +189,44 @@ h3 {
 
 .wrapSection div {
     text-align: center;
+    /*
+        Box Model: Margin
+        The margin is the area outside of the container.
+        Using margin can horizontally and/or vertically shift
+        the container (the <div> in this case) from the edges
+        of the parent container (.wrapSection in this case)
+    */
     margin: 10px 0;
 }
 
 .wrapSection img {
-    width: 170px;
-    height: 170px;
+    /*
+        Box Model: Content
+        After specifying any values for margins, borders, and
+        padding, the carefully-positioned item that displays
+        is the content itself. However, it too can be adjusted.
+        In the case below, the content is the series of images
+        all being adjusted to sizes of 170px * 170px
+    */
+    width: 220px;
+    height: 220px;
+}
+
+.iconSection {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}
+
+.iconSection div {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.iconSection img {
+    width: 60px;
+    height: 60px;
 }
 
 footer {
