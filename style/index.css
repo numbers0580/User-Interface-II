@@ -63,6 +63,16 @@ table {
     100% {background-color: #BB0000;}
 }
 
+html {
+    /*
+        Note: I tried changing the font-size in the Meyer's Reset at the top of this
+        page to 62.5%, but it had no effect on the root em. This is probably my 5th
+        attempt at addressing rem through various tags and locations, so I'm sure now
+        that this is the correct way of setting the rem.
+    */
+    font-size: 62.5%;
+}
+
 body {
     font-family: 'Cabin', sans-serif;
     background-color: black;
@@ -100,7 +110,7 @@ header {
         specified edges (top, right, bottom, left -- in that order)
     */
     padding: 5%;
-    background-image: url('https://lh3.googleusercontent.com/proxy/Owk8a_7mCByMKe1s-28cLuWJzuqK0_7mhxpXCe_4Uh6DYH9HlQDLwTeFCb27q54M_LN1H0SqmPTJcjoCgVaK_GM5oO9N2FzzORLulZczSK4rGpxS7c1tVkM0');
+    background-image: url('http://www.overtapped.com/unnamed%20(1).jpg');
     background-size: cover;
 }
 
@@ -109,20 +119,20 @@ button {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 3.6rem;
     font-weight: bold;
     color: #FFD700;
     padding: 0.5%;
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: bold;
     padding: 0.5%;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: bold;
     color: #C0C0C0;
     padding: 0.5%;
@@ -133,7 +143,7 @@ h3 {
     height: 30px;
     border-radius: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .tablinks:hover {
@@ -147,6 +157,7 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     padding: 20px;
+    font-size: 1.6rem;
 }
 
 .nameSection div {
@@ -162,6 +173,8 @@ h3 {
         container. In this case, the container is the image in
         the first section, just below the header.
     */
+    width: 350px;
+    height: 350px;
     border: 4px solid gold;
 }
 
@@ -173,6 +186,7 @@ h3 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    font-size: 1.6rem;
 }
 
 .wrapSection div {
@@ -222,4 +236,76 @@ footer {
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190826/pngtree-abstract-metallic-blue-black-frame-layout-modern-tech-design-template-image_305020.jpg');
     background-size: cover;
     padding: 5%;
+}
+
+@media(max-width: 800px) {
+    .viewablePage {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .nameSection, .wrapSection {
+        font-size: 1.4rem;
+    }
+
+    .nameSection img {
+        width: 220px;
+        height: 220px;
+        border: 2px solid gold;
+    }
+
+    .wrapSection {
+        justify-content: space-between;
+    }
+
+    .wrapSection div {
+        width: 30%;
+        height: 30%;
+    }
+
+    .wrapSection img {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media(max-width: 500px) {
+     .tablinks {
+        width: 60px;
+        height: 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .nameSection {
+        flex-direction: column;
+        justify-content: none;
+    }
+
+    .nameSection div {
+        width: 96%;
+    }
+
+    .nameSection img {
+        width: 300px;
+        height: 300px;
+        border: 2px solid gold;
+    }
+
+    .wrapSection div {
+        width: 44%;
+        height: 44%;
+    }
+
+    .iconSection img {
+        width: 30px;
+        height: 30px;
+    }
 }
